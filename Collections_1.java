@@ -1,27 +1,5 @@
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Set;
-import java.util.Stack;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import java.util.Vector;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class Collections_1 {
     public static void main(String[] args) {
@@ -29,71 +7,90 @@ public class Collections_1 {
         System.out.println("\nJava Collections\n");
 
         String[] myStringArray = new String[25];
-        myStringArray[1] = "Test";
-        System.out.println(myStringArray.length);
         
-        List<String> myList = new ArrayList<String>();
-        
-
-        Collection<String> myStringTreeSet = new TreeSet<>();
-        Collection<String> stringArrayList = new ArrayList<>();
-        Collection<String> temp2 = new LinkedList<>();
-        Collection<String> temp3 = new Vector<>();
-        Collection<String> temp4 = new Stack<>();
-        Collection<String> temp5 = new PriorityQueue<>();
-        Collection<String> temp6 = new ArrayDeque<>();
-        Collection<String> test = new LinkedHashSet<>();
-        Collection<String> test1 = new ArrayDeque<>();
-        
+        System.out.println("The Java Collections Framework provides several general-purpose implementations of the core interfaces.");
+        System.out.println("The most commonly used implementations.");
+        Set<String> myHashSet = new HashSet<>();
+        List<String> myList = new ArrayList<>();
         Map<String, String> myHashMap = new HashMap<>();
+        Queue<Person> myLinkedListQueue = new LinkedList<>();
+        ArrayDeque<String> myArrayDeque = new ArrayDeque<>();
+        
+        Set<String> myTreeSet = new TreeSet<>();
+        Set<String> myLinkedHashSet = new LinkedHashSet<>();
+        Set<String> myCopyOnWriteArraySet = new CopyOnWriteArraySet<>();
+        EnumSet<myEnum> myEnumSet = EnumSet.allOf(myEnum.class);
+                
+        List<String> myLinkedList = new LinkedList<>();
+        List<String> myCopyOnWriteArrayList = new CopyOnWriteArrayList<>();
+        List<String> myVector = new Vector<>();
+        List<String> myStack = new Stack<>();       
+        
         Map<String, String> myTreeMap = new TreeMap<>();
         Map<String, String> myLinkedHashMap = new LinkedHashMap<>();
         Map<String, String> myConcurrentHashMap = new ConcurrentHashMap<>();
+        Map<String, String> myIdentityHashMap = new IdentityHashMap<>();
+        Map<String, String> myWeakHashMap = new WeakHashMap<>();
+        Map<myEnum, String> myEnumMap = new EnumMap<>(myEnum.class);
 
-        Queue<Person> myLinkedListQueue = new LinkedList<>();
         Queue<Person> myPriorityQueue = new PriorityQueue<>();
-        myPriorityQueue.add(new Person(1, "Jan", "Peetsers", 25));
-        myPriorityQueue.add(new Person(2, "Jan", "Peetsers", 20));
-        myPriorityQueue.add(new Person(3, "Jan", "Peetsers", 50));
-        myPriorityQueue.add(new Person(4, "Jan", "Peetsers", 5));
-        myPriorityQueue.add(new Person(5, "Jan", "Peetsers", 80));
-        while (!myPriorityQueue.isEmpty()) {
-            System.out.println(myPriorityQueue.poll());
-        }
         Queue<Person> myLinkedBlockingQueue = new LinkedBlockingQueue<>();
-        
         Queue<Person> myArrayBlockingQueue = new ArrayBlockingQueue<>(5);
-        myArrayBlockingQueue.add(new Person(1, "Jan", "Peetsers", 25));
-        myArrayBlockingQueue.add(new Person(1, "Jan", "Peetsers", 5));
-        myArrayBlockingQueue.add(new Person(1, "Jan", "Peetsers", 50));
-        while (!myArrayBlockingQueue.isEmpty()) {
-            System.out.println(myArrayBlockingQueue.poll());
-        }
         Queue<Person> myPriorityBlockingQueue = new PriorityBlockingQueue<>();
-        SynchronousQueue<Person> mySynchronousQueue = new SynchronousQueue<>();
+        Queue<Person> mySynchronousQueue = new SynchronousQueue<>();
+        Queue<Person> myLinkedTransferQueue = new LinkedTransferQueue<>();
+        Queue<DelayObject> myDelayQueue = new DelayQueue<DelayObject>();
 
-        Queue<Person> myArrayDeque = new ArrayDeque<>();
-        Queue<Person> myLinkedBlockingDeque = new LinkedBlockingDeque<>();
-        
-        Collection<String> test3 = new HashSet<>();
-        List<String> lijst1 = new ArrayList<>();
-        List<String> lijst2 = new CopyOnWriteArrayList<>();
-        List<String> lijst3 = new LinkedList<>();
-        List<String> lijst4 = new Vector<>();
-        Set<String> set1 = new HashSet<>();
-        
-        myStringTreeSet.add("Test");
-        System.out.println(myStringArray.length);
-        System.out.println(myStringTreeSet.stream().toList());
-        
+        Deque<String> myLinkedListDeque = new LinkedList<>();
+        Deque<String> myLinkedBlockingDeque = new LinkedBlockingDeque<>();
+                
     }
 
+    private enum myEnum {ALICE, DAVID, CHARLIE, EVA, FRANK};
     private record Person (Integer id, String firstName, String lastName, Integer age) implements Comparable<Person> {
 
         @Override
         public int compareTo(Person person) {
             return Integer.compare(person.age, age);
-        }}
+        }
 
     }
+
+    class DelayObject implements Delayed {
+
+        private String name;
+        private Long time;
+
+        public DelayObject(String name, long delayTime) {
+            this.name = name;
+            this.time = System.currentTimeMillis()
+                    + delayTime;
+        }
+
+        @Override
+        public int compareTo(Delayed object) {
+            if (this.time < ((DelayObject)object).time) {
+                return -1;
+            }
+            if (this.time > ((DelayObject)object).time) {
+                return 1;
+            }
+            return 0;
+        }
+
+        @Override
+        public long getDelay(TimeUnit unit) {
+            long diff = time - System.currentTimeMillis();
+            return unit.convert(diff, TimeUnit.MILLISECONDS);
+        }
+
+        @Override
+        public String toString() {
+            return "\n{"
+                + "name=" + name
+                + ", time=" + time
+                + "}";
+        }
+
+    }    
 }
