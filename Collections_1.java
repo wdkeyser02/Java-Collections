@@ -47,6 +47,7 @@ public class Collections_1 {
     }
 
     private enum myEnum {ALICE, DAVID, CHARLIE, EVA, FRANK};
+    
     private record Person (Integer id, String firstName, String lastName, Integer age) implements Comparable<Person> {
 
         @Override
