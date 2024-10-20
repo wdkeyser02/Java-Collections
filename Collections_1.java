@@ -18,6 +18,7 @@ public class Collections_1 {
         ArrayDeque<String> myArrayDeque = new ArrayDeque<>();
         
         Set<String> myTreeSet = new TreeSet<>();
+        SortedSet<String> myTreeSetSorted = new TreeSet<>();
         Set<String> myLinkedHashSet = new LinkedHashSet<>();
         Set<String> myCopyOnWriteArraySet = new CopyOnWriteArraySet<>();
         EnumSet<myEnum> myEnumSet = EnumSet.allOf(myEnum.class);
@@ -25,7 +26,7 @@ public class Collections_1 {
         List<String> myLinkedList = new LinkedList<>();
         List<String> myCopyOnWriteArrayList = new CopyOnWriteArrayList<>();
         List<String> myVector = new Vector<>();
-        List<String> myStack = new Stack<>();       
+        List<String> myStack = new Stack<>();
         
         Map<String, String> myTreeMap = new TreeMap<>();
         Map<String, String> myLinkedHashMap = new LinkedHashMap<>();
