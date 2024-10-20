@@ -22,7 +22,7 @@ public class Collections_1 {
         SortedSet<String> myTreeSetSorted = new TreeSet<>();
         Set<String> myLinkedHashSet = new LinkedHashSet<>();
         Set<String> myCopyOnWriteArraySet = new CopyOnWriteArraySet<>();
-        Set<String> myConcurrentSkipListSet = new ConcurrentSkipListSet<>()
+        Set<String> myConcurrentSkipListSet = new ConcurrentSkipListSet<>();
         EnumSet<myEnum> myEnumSet = EnumSet.allOf(myEnum.class);
                 
         List<String> myLinkedList = new LinkedList<>();
