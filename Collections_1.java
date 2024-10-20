@@ -11,6 +11,7 @@ public class Collections_1 {
         
         System.out.println("The Java Collections Framework provides several general-purpose implementations of the core interfaces.");
         System.out.println("The most commonly used implementations.");
+        
         Set<String> myHashSet = new HashSet<>();
         List<String> myList = new ArrayList<>();
         Map<String, String> myHashMap = new HashMap<>();
@@ -21,6 +22,7 @@ public class Collections_1 {
         SortedSet<String> myTreeSetSorted = new TreeSet<>();
         Set<String> myLinkedHashSet = new LinkedHashSet<>();
         Set<String> myCopyOnWriteArraySet = new CopyOnWriteArraySet<>();
+        Set<String> myConcurrentSkipListSet = new ConcurrentSkipListSet<>()
         EnumSet<myEnum> myEnumSet = EnumSet.allOf(myEnum.class);
                 
         List<String> myLinkedList = new LinkedList<>();
