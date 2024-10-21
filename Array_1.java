@@ -73,6 +73,7 @@ public class Array_1 {
         Integer[] myIntegerArray[];
         String[] myStringArray[];
         Person[] myPersonArray[];
+        System.out.println("");
     }
 
     private record Person (Integer id, String firstName, String lastName, Integer age) {}
