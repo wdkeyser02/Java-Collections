@@ -5,6 +5,16 @@ public class Array_1 {
     public static void main(String[] args) {
         
         System.out.println("\nJava Array\n");
+        System.out.println("Advantages of Java Arrays");
+        System.out.println("Efficient Access: Accessing an element by its index is fast and has constant time complexity, O(1).");
+        System.out.println("Memory Management: Arrays have fixed size, which makes memory management straightforward and predictable.");
+        System.out.println("Data Organization: Arrays help organize data in a structured manner, making it easier to manage related elements.");
+        System.out.println("");
+        System.out.println("Disadvantages of Java Arrays");
+        System.out.println("Fixed Size: Once an array is created, its size cannot be changed, which can lead to memory waste if the size is overestimated or insufficient storage if underestimated.");
+        System.out.println("Type Homogeneity: Arrays can only store elements of the same data type, which may require additional handling for mixed types of data.");
+        System.out.println("Insertion and Deletion: Inserting or deleting elements, especially in the middle of an array, can be costly as it may require shifting elements.");
+        System.out.println("");
 
         byte mybyteArray[];
         mybyteArray = new byte[3];
@@ -15,6 +25,7 @@ public class Array_1 {
         for(byte x = 0; x < 3; x++) {
             System.out.println("mybyteArray at index " + x + " : " + mybyteArray[x]);
         }
+        System.out.println("");
 
         mybyteArray[0] = 10;
         mybyteArray[1] = 20;
@@ -23,6 +34,7 @@ public class Array_1 {
         for(byte x = 0; x < 3; x++) {
             System.out.println("mybyteArray at index " + x + " : " + mybyteArray[x]);
         }
+        System.out.println("");
 
         byte test = 0;
         Arrays.fill(mybyteArray, test);
@@ -30,6 +42,7 @@ public class Array_1 {
         for(byte x = 0; x < 3; x++) {
             System.out.println("mybyteArray at index " + x + " : " + mybyteArray[x]);
         }
+        System.out.println("");
 
         byte[] mybyteArray1 = new byte[3];
         byte[][] mybyteArray2 = new byte[3][3];
@@ -44,10 +57,19 @@ public class Array_1 {
                     System.out.println("mybyteArray at index " + x + " " + y + " " + z + " : " + mybyteArray13[x][y][z]);
                 }
             }
-            
         }
+        System.out.println("");
         
-        int[] myintArray[];
+        System.out.println("Clone Array: ");
+        int myintArray[] = { 1, 2, 3 };
+        int mycloneArray[] = myintArray.clone();
+
+        System.out.println(myintArray == mycloneArray);
+        for (int i = 0; i < mycloneArray.length; i++) {
+            System.out.print(mycloneArray[i] + " ");
+        }
+        System.out.println("");
+
         Integer[] myIntegerArray[];
         String[] myStringArray[];
         Person[] myPersonArray[];
