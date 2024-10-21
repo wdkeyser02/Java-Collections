@@ -23,7 +23,9 @@ public class ArrayList_1 {
         // ArrayList<int> myintArrayList = new ArrayList<>();
         ArrayList<String> myStringArrayList = new ArrayList<String>();
         ArrayList<Person> myPersonArrayList = new ArrayList<>();
+        myPersonArrayList.add(new Person(1, "Frank", "Gates", 51));
         System.out.println(myStringArrayList);
+        System.out.println(myPersonArrayList);
         System.out.println("");
 
         int n = 5;
