@@ -7,13 +7,13 @@ public class Collections_1 {
         
         System.out.println("\nJava Collections\n");
 
-        String[] myStringArray = new String[25];
+        String[] myStringArray = new String[25]; // https://www.youtube.com/watch?v=hscHyVoWTBA
         
         System.out.println("The Java Collections Framework provides several general-purpose implementations of the core interfaces.");
         System.out.println("The most commonly used implementations.");
         
         Set<String> myHashSet = new HashSet<>();
-        List<String> myList = new ArrayList<>();
+        List<String> myList = new ArrayList<>(); // https://www.youtube.com/watch?v=on9j6YkW4Sg and https://www.youtube.com/watch?v=xIgBYF2_siY
         Map<String, String> myHashMap = new HashMap<>();
         Queue<Person> myLinkedListQueue = new LinkedList<>();
         ArrayDeque<String> myArrayDeque = new ArrayDeque<>();
