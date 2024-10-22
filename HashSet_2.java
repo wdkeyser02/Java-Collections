@@ -19,7 +19,7 @@ public class HashSet_2 {
         }
         long stopAdd = System.nanoTime();
         for(int x = 0; x < size; x++) {
-            myIntegerArrayList.add(x, x);
+            myIntegerArrayList.add(x);
         }
         long endAdd = System.nanoTime();
         long intTimeAdd = TimeUnit.NANOSECONDS.toMillis(stopAdd - startAdd);
