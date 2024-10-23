@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ArrayList_1 {
-    @SuppressWarnings("unused")
     public static void main(String[] args) {
         
         System.out.println("\nJava ArrayList\n");
