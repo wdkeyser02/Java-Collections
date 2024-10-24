@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class HashSet_2 {
     @SuppressWarnings("unused")
     public static void main(String[] args) {
-        System.out.println("\nJava Array - ArrayList Speedtest!\n");
+        System.out.println("\nJava ArrayList - Hashset Speedtest!\n");
         int size = 10000000;
         Integer value;
 

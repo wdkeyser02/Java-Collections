@@ -67,7 +67,7 @@ public class HashSet_1 {
         System.out.println("Initial HashSet " + myHashSet1);
         myHashSet1.remove("B");
         System.out.println("After removing element " + myHashSet1);
-        System.out.println("Element AC exists in the Set : " + myHashSet1.contains("Z"));
+        System.out.println("Element Z exists in the Set : " + myHashSet1.contains("Z"));
         System.out.println("Element AC exists in the Set : " + myHashSet1.remove("AC"));
         System.out.println("Is myHashSet1 Empty? " + myHashSet1.isEmpty());
         System.out.println("");
