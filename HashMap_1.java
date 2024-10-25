@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMap_1 {
     public static void main(String[] args) {
@@ -85,6 +87,9 @@ public class HashMap_1 {
         myHashMapArrayListA.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
         System.out.println("");
     
+        System.out.println("Multi Thread HashMap.");
+        Map<Integer, Integer> myMultiThreadHashMap = Collections.synchronizedMap(new HashMap<Integer, Integer>());
+        System.out.println(myMultiThreadHashMap);
     }
 
     private record Person (Integer id, String firstName, String lastName, Integer age) {}
