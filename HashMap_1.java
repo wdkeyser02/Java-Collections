@@ -55,8 +55,6 @@ public class HashMap_1 {
         myHashMapCopy.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
         System.out.println("");
 
-
-
         System.out.println("HashMap with objects: ");
         HashMap<Integer, Person> myHashMapPerson = new HashMap<>();
         System.out.println("HashMap Elements: " + myHashMapPerson);
@@ -73,11 +71,14 @@ public class HashMap_1 {
         HashMap<Integer, ArrayList<String>> myHashMapArrayList = new HashMap<>();
         System.out.println(myHashMapArrayList);
         System.out.println("");
+
+        System.out.println("ArrayList as Value");
         myHashMapArrayList.put(1, new ArrayList<String>(Arrays.asList("A", "B", "C")));
         myHashMapArrayList.put(2, new ArrayList<String>(Arrays.asList("X", "Y", "Z")));
         myHashMapArrayList.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
         System.out.println("");
 
+        System.out.println("ArrayList as Key");
         HashMap<ArrayList<String>, Integer> myHashMapArrayListA = new HashMap<>();
         myHashMapArrayListA.put(new ArrayList<String>(Arrays.asList("A", "B", "C")), 1);
         myHashMapArrayListA.put(new ArrayList<String>(Arrays.asList("X", "Y", "Z")), 2);
