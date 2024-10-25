@@ -78,6 +78,12 @@ public class HashMap_1 {
         myHashMapArrayList.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
         System.out.println("");
 
+        HashMap<ArrayList<String>, Integer> myHashMapArrayListA = new HashMap<>();
+        myHashMapArrayListA.put(new ArrayList<String>(Arrays.asList("A", "B", "C")), 1);
+        myHashMapArrayListA.put(new ArrayList<String>(Arrays.asList("X", "Y", "Z")), 2);
+        myHashMapArrayListA.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
+        System.out.println("");
+    
     }
 
     private record Person (Integer id, String firstName, String lastName, Integer age) {}
