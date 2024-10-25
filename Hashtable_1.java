@@ -1,3 +1,5 @@
+import java.util.Hashtable;
+
 public class Hashtable_1 {
     public static void main(String[] args) {
         
@@ -12,6 +14,30 @@ public class Hashtable_1 {
         System.out.println("Poor performance: The Hashtable class is synchronized, which can result in slower performance compared to other implementations of the Map interface, such as HashMap or ConcurrentHashMap.");
         System.out.println("");
 
-        
+        Hashtable<Integer, String> myHashtable = new Hashtable<>();
+        myHashtable.put(1, "Bill");
+        myHashtable.put(2, "Frank");
+        myHashtable.put(3, "David");
+        myHashtable.put(1, "Bill");
+        System.out.println(myHashtable);
+        myHashtable.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
+        System.out.println(myHashtable.get(1));
+        System.out.println(myHashtable.containsKey(2));
+        System.out.println(myHashtable.containsValue("Bill"));
+        myHashtable.remove(1);
+        System.out.println(myHashtable);
+        myHashtable.remove(2, "Peter");
+        System.out.println(myHashtable);
+        myHashtable.remove(2, "Frank");
+        System.out.println(myHashtable);
+        System.out.println(myHashtable.size());
+        myHashtable.put(1, "Bill");
+        myHashtable.put(2, "Frank");
+        System.out.println(myHashtable.keySet());
+        System.out.println(myHashtable.isEmpty());
+        myHashtable.clear();
+        System.out.println(myHashtable);
+
+
     }
 }
