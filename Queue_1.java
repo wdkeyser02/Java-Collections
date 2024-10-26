@@ -4,7 +4,7 @@ import java.util.Queue;
 public class Queue_1 {
     public static void main(String[] args) {
         
-        System.out.println("\nJava Queue\n");
+        System.out.println("\nJava Queue - FIFO (first-in, first-out)\n");
         System.out.println("Advantages of using the Queue Interface in Java.");
         System.out.println("Order preservation: The Queue interface provides a way to store and retrieve elements in a specific order, following the first-in, first-out (FIFO) principle.");
         System.out.println("Flexibility: The Queue interface is a subtype of the Collection interface, which means that it can be used with many different data structures and algorithms, depending on the requirements of the application.");
@@ -22,5 +22,6 @@ public class Queue_1 {
         System.out.println("add: " + myQueue.add(1)); // Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning true upon success and throwing an IllegalStateException if no space is currently available.
         System.out.println("offer: " + myQueue.offer(2)); // Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. When using a capacity-restricted queue, this method is generally preferable to add, which can fail to insert an element only by throwing an exception.
         System.out.println("");
+        myQueue.forEach(System.out::println);
     }
 }
