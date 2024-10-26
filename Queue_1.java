@@ -31,8 +31,10 @@ public class Queue_1 {
         System.out.println("element: " + myQueue.element()); // Retrieves, but does not remove, the head of this queue. This method differs from peek only in that it throws an exception if this queue is empty.
         System.out.println("poll: " + myQueue.poll()); // Retrieves and removes the head of this queue, or returns null if this queue is empty.
         System.out.println("remove: " + myQueue.remove()); // Retrieves and removes the head of this queue. This method differs from poll() only in that it throws an exception if this queue is empty.
-
+        System.out.println("");
+        System.out.println("Elements: ");
         myQueue.forEach(System.out::println);
+        System.out.println("");
         System.out.println("size: " + myQueue.size());
         System.out.println("");
         myQueue.clear();
@@ -43,13 +45,19 @@ public class Queue_1 {
         myPersonQueue.offer(new Person(1, "Bill", "Gates", 50));
         myPersonQueue.offer(new Person(2, "David", "Last", 50));
         myPersonQueue.offer(new Person(3, "Bill", "Gates", 50));
+        System.out.println("forEach - Person: ");
         myPersonQueue.forEach(System.out::println);
         System.out.println("");
-        System.out.println("poll:" + myPersonQueue.poll());
-        System.out.println("poll:" + myPersonQueue.poll());
-        System.out.println("poll:" + myPersonQueue.poll());
+        System.out.println("For loop - Person: ");
+        for(Person person: myPersonQueue) {
+            System.out.println(person);
+        }
+        System.out.println("");
+        System.out.println("poll:" + myPersonQueue.poll() + " - size:" + myPersonQueue.size());
+        System.out.println("poll:" + myPersonQueue.poll() + " - size:" + myPersonQueue.size());
+        System.out.println("poll:" + myPersonQueue.poll() + " - size:" + myPersonQueue.size());
         System.out.println("isEmpty:" + myPersonQueue.isEmpty());
-        System.out.println("poll:" + myPersonQueue.poll()); // return null when empty
+        System.out.println("poll:" + myPersonQueue.poll() + " - size:" + myPersonQueue.size()); // return null when empty
         System.out.println("element:" + myPersonQueue.element()); // return ERROR - NoSuchElementException
         System.out.println("");
 
