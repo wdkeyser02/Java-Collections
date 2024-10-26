@@ -21,7 +21,39 @@ public class Queue_1 {
         Queue<Integer> myQueue = new LinkedList<>();
         System.out.println("add: " + myQueue.add(1)); // Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning true upon success and throwing an IllegalStateException if no space is currently available.
         System.out.println("offer: " + myQueue.offer(2)); // Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. When using a capacity-restricted queue, this method is generally preferable to add, which can fail to insert an element only by throwing an exception.
+        System.out.println("offer: " + myQueue.offer(3));
+        System.out.println("offer: " + myQueue.offer(4));
+        System.out.println("offer: " + myQueue.offer(5));
+        System.out.println("offer: " + myQueue.offer(6));
         System.out.println("");
         myQueue.forEach(System.out::println);
+        System.out.println("peek: " + myQueue.peek()); // Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+        System.out.println("element: " + myQueue.element()); // Retrieves, but does not remove, the head of this queue. This method differs from peek only in that it throws an exception if this queue is empty.
+        System.out.println("poll: " + myQueue.poll()); // Retrieves and removes the head of this queue, or returns null if this queue is empty.
+        System.out.println("remove: " + myQueue.remove()); // Retrieves and removes the head of this queue. This method differs from poll() only in that it throws an exception if this queue is empty.
+
+        myQueue.forEach(System.out::println);
+        System.out.println("size: " + myQueue.size());
+        System.out.println("");
+        myQueue.clear();
+        System.out.println("myQueue: " + myQueue);
+        System.out.println("");
+
+        Queue<Person> myPersonQueue = new LinkedList<>();
+        myPersonQueue.offer(new Person(1, "Bill", "Gates", 50));
+        myPersonQueue.offer(new Person(2, "David", "Last", 50));
+        myPersonQueue.offer(new Person(3, "Bill", "Gates", 50));
+        myPersonQueue.forEach(System.out::println);
+        System.out.println("");
+        System.out.println("poll:" + myPersonQueue.poll());
+        System.out.println("poll:" + myPersonQueue.poll());
+        System.out.println("poll:" + myPersonQueue.poll());
+        System.out.println("isEmpty:" + myPersonQueue.isEmpty());
+        System.out.println("poll:" + myPersonQueue.poll()); // return null when empty
+        System.out.println("element:" + myPersonQueue.element()); // return ERROR - NoSuchElementException
+        System.out.println("");
+
     }
+
+    private record Person (Integer id, String firstName, String lastName, Integer age) {}
 }
